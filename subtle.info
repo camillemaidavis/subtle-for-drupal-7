@@ -1,0 +1,9 @@
+name = Subtle
+description = A clean and lightweight starter theme.
+core = 7.x
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+
+stylesheets[all][] = css/style.css
