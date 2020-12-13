@@ -57,20 +57,47 @@ input[type='submit']:hover {
     cursor: pointer;
 }
 
+/* _Widths */
+
+.inner {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    width: 100%;
+    max-width: 70rem;
+}
+
+@media screen and (min-width: 992px) {
+    .inner {
+        max-width: 80rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .inner {
+        max-width: 90rem;
+    }
+}
+
 /* _Header */
 
 header {
+    display: flex;
+    justify-content: center;
     position: fixed;
     z-index: 1;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
     width: 100%;
-    min-height: 7.2rem;
-    padding: 1.6rem;
     background: #000;
     color: #fff;
     box-shadow: 0 1.6rem 3.2rem rgba(0,0,0,.1);
+}
+
+header .inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    min-height: 7.2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
 }
 
 header a:hover,
@@ -167,43 +194,73 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-top: 7.2rem;
+    align-items: center;
+}
+
+main .inner {
+    display: flex;
+    flex-direction: column;
 }
 
 #page-title {
     margin-bottom: -1.6rem;
-    padding: 3.2rem 1.6rem 0;
+    padding-top: calc(3.2rem + 7.2rem);
+    padding-bottom: 0
 }
 
 .region-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: 100%;
 }
 
 #block-system-main {
     flex-grow: 1;
 }
 
-.region-content .block {
-    padding: 3.2rem 1.6rem;
+.region-content > .block {
+    display: flex;
+    align-items: center;
+    padding: 3.2rem 0;
+    flex-direction: column;
 }
 
-.region-content .block:nth-child(2n) {
+.region-content > .block:nth-child(2n) {
     background: #eee;
 }
 
+.region-content > .block > .content {
+    padding: 0 1.6rem;
+}
+
+
 /* _Footer */
 
-.region-footer {
+footer {
     display: flex;
-    padding: 3.2rem 1.6rem;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     background: #000;
     background-image: url('https://camilledavis.com/img/dark.png');
     background-attachment: fixed;
     color: #eee;
+}
+
+.region-footer {
+    display: flex;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.region-footer .inner {
+    padding-left: 0;
+}
+
+.region-footer .block:last-child .inner {
+    padding-right: 0;
 }
 
 @media screen and (max-width: 991px) {

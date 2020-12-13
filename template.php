@@ -1,5 +1,8 @@
 <?php
 
+// Remove when done developing
+db_query("DELETE FROM {cache};");
+
 drupal_add_js('https://kit.fontawesome.com/4a20555d6f.js', 'external');
 
 drupal_add_js('/sites/all/themes/subtle/js/ui.js', array(
