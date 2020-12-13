@@ -14,9 +14,10 @@ html {
     font-size: 62.5%;
 }
 
-body {
+body, input, button, textarea {
     font-size: 1.6rem;
     font-family: Verdana, sans-serif;
+    line-height: 1.6;
 }
 
 /* General */
@@ -36,10 +37,31 @@ a:focus {
     max-height: 0;
 }
 
+input {
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    background: #59b;
+    color: #111;
+    border: 0;
+}
+
+input[type='submit'] {
+    background: #fff;
+    color: #111;
+}
+
+input[type='submit']:focus,
+input[type='submit']:hover {
+    color: #59b;
+    background: #000;
+    cursor: pointer;
+}
+
 /* _Header */
 
 header {
     position: fixed;
+    z-index: 1;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -179,18 +201,45 @@ main {
     color: #eee;
 }
 
-.region-footer a {
+@media screen and (max-width: 991px) {
+
+    .region-footer {
+        flex-wrap: wrap;    
+        padding-bottom: 0;
+    }
+
+    .region-footer .block {
+        width: 50%;
+        margin-bottom: 3.2rem;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    .region-footer {
+        flex-direction: column;
+    }
+
+}
+
+footer a {
     color: #fff;
 }
 
-.region-footer a:hover,
-.region-footer a:focus {
+footer a:hover,
+footer a:focus {
     color: #59b;
 }
 
-.region-footer li {
+footer li {
     list-style: none;
 }
+
+footer h2 {
+    padding-bottom: 1.6rem;
+}
+
 
 /* _Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -277,3 +326,28 @@ transform: rotate(-90deg);
 transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+/* _Search Form */
+
+#block-search-form h2 {
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+#search-block-form .form-item {
+    margin: 0;
+}
+
+#search-block-form .container-inline {
+    display: flex;
+    align-items: center;
+}
+
+#search-block-form #edit-search-block-form--2 {
+    border-radius: .3rem 0 0 .3rem;
+}
+
+#search-block-form #edit-submit {
+    border-radius: 0 .3rem .3rem 0;
+}
