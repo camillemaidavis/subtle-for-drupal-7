@@ -1,0 +1,279 @@
+/* _Normalize */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Verdana, sans-serif;
+}
+
+/* General */
+
+h1, h2, h3, h4 {
+    padding-bottom: 2.4rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: normal;
+}
+
+a:hover,
+a:focus {
+    color: #59b;
+}
+
+.hidden {
+    max-height: 0;
+}
+
+/* _Header */
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 7.2rem;
+    padding: 1.6rem;
+    background: #000;
+    color: #fff;
+    box-shadow: 0 1.6rem 3.2rem rgba(0,0,0,.1);
+}
+
+header a:hover,
+header a:focus {
+    color: #59b !important;
+}
+
+#branding a {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+}
+
+#logo {
+    width: 2.4rem;
+    margin-bottom: -.1rem;
+    margin-right: .8rem;
+}
+
+#site_name {
+    font-size: 4rem;
+    padding-bottom: 0;
+} 
+
+#toggle {
+    display: none;
+}
+
+#links {
+    display: flex;    
+    align-items: flex-end;
+    list-style: none;
+    height: 100%;
+}
+
+#links a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-right: 3.2rem;
+    letter-spacing: .1rem;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+#links li:last-child a {
+    padding-right: 0;
+} 
+
+@media screen and (max-width:767px) { /* Mobile Menu */
+
+    header {
+        transition: max-height .2s;
+    }
+
+    #main-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+	#toggle {
+		display: block;
+	}
+
+	#links {
+        flex-direction: column;
+        overflow-y: hidden;
+        transition: max-height .2s;
+	}
+
+    #links a {
+        display: block;
+        padding: 1.4rem 0 0;
+    }
+
+}
+
+/* _Content */
+
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 7.2rem;
+}
+
+#page-title {
+    margin-bottom: -1.6rem;
+    padding: 3.2rem 1.6rem 0;
+}
+
+.region-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#block-system-main {
+    flex-grow: 1;
+}
+
+.region-content .block {
+    padding: 3.2rem 1.6rem;
+}
+
+.region-content .block:nth-child(2n) {
+    background: #eee;
+}
+
+/* _Footer */
+
+.region-footer {
+    display: flex;
+    padding: 3.2rem 1.6rem;
+    justify-content: space-between;
+    width: 100%;
+    background: #000;
+    background-image: url('https://camilledavis.com/img/dark.png');
+    background-position: fixed;
+    color: #eee;
+}
+
+.region-footer a {
+    color: #fff;
+}
+
+.region-footer a:hover,
+.region-footer a:focus {
+    color: #59b;
+}
+
+.region-footer li {
+    list-style: none;
+}
+
+/* _Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+button.hamburger {
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    margin-top: -.2rem;
+    overflow: visible;
+}
+
+.hamburger-box {
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 4rem;
+    height: .5rem;
+    background-color: #fff;
+    border-radius: .4rem;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block;
+}
+.hamburger-inner::before {
+    top: -1rem;
+}
+.hamburger-inner::after {
+    bottom: -1rem;
+}
+/*
+* Squeeze
+*/
+.hamburger--squeeze .hamburger-inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--squeeze .hamburger-inner::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+.hamburger--squeeze .hamburger-inner::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+.hamburger--squeeze.is-active .hamburger-inner::after {
+bottom: 0;
+transform: rotate(-90deg);
+transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
